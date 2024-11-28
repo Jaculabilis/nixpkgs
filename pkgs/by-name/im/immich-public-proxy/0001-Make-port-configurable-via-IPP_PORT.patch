@@ -1,0 +1,26 @@
+From a377081c80dab13320c4511630dc430c1208a49f Mon Sep 17 00:00:00 2001
+From: Tim Van Baak <tim.vanbaak@gmail.com>
+Date: Thu, 28 Nov 2024 11:31:22 -0800
+Subject: [PATCH 1/2] Make port configurable via IPP_PORT
+
+---
+ app/src/index.ts | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/app/src/index.ts b/app/src/index.ts
+index c59af30..44ea8a2 100644
+--- a/app/src/index.ts
++++ b/app/src/index.ts
+@@ -133,6 +133,7 @@ app.get('*', (req, res) => {
+ })
+ 
+ // Start the ExpressJS server
+-app.listen(3000, () => {
+-  console.log(dayjs().format() + ' Server started')
++const port = process.env.IPP_PORT || 3000;
++app.listen(port, () => {
++  console.log(dayjs().format() + ' Server started on ' + port)
+ })
+-- 
+2.47.0
+

@@ -1,0 +1,24 @@
+From c577f101e3e3f6ade0ad06b5d344e228a8f68b0f Mon Sep 17 00:00:00 2001
+From: Tim Van Baak <tim.vanbaak@gmail.com>
+Date: Thu, 28 Nov 2024 12:04:09 -0800
+Subject: [PATCH 2/2] Add bin to package.json
+
+---
+ app/package.json | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/app/package.json b/app/package.json
+index 501c4b1..d13ca22 100644
+--- a/app/package.json
++++ b/app/package.json
+@@ -15,6 +15,7 @@
+     "url": "https://github.com/alangrainger/immich-public-proxy.git"
+   },
+   "main": "dist/index.js",
++  "bin": "dist/index.js",
+   "dependencies": {
+     "archiver": "^7.0.1",
+     "dayjs": "^1.11.13",
+-- 
+2.47.0
+
