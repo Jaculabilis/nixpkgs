@@ -2,6 +2,7 @@
   lib,
   buildNpmPackage,
   fetchFromGitHub,
+  nixosTests,
   nodejs,
 }:
 buildNpmPackage rec {
@@ -32,6 +33,10 @@ buildNpmPackage rec {
       "static('public'" \
       "static('$out/lib/node_modules/immich-public-proxy/public'"
   '';
+
+  passthru.tests = {
+    inherit (nixosTests) immich-public-proxy;
+  };
 
   meta = {
     description = "Share your Immich photos and albums in a safe way without exposing your Immich instance to the public";
