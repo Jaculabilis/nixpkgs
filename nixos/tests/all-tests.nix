@@ -466,6 +466,7 @@ in {
   ifm = handleTest ./ifm.nix {};
   iftop = handleTest ./iftop.nix {};
   immich = handleTest ./web-apps/immich.nix {};
+  immich-public-proxy = handleTest ./web-apps/immich-public-proxy.nix {};
   incron = handleTest ./incron.nix {};
   incus = pkgs.recurseIntoAttrs (handleTest ./incus { inherit handleTestOn; inherit (pkgs) incus; });
   incus-lts = pkgs.recurseIntoAttrs (handleTest ./incus { inherit handleTestOn; });
