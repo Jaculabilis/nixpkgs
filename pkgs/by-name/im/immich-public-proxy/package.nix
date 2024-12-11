@@ -17,6 +17,8 @@ buildNpmPackage rec {
 
   sourceRoot = "${src.name}/app";
 
+  patches = [ ./IPP_CONFIG.patch ];
+
   npmDepsHash = "sha256-dEdEonVS+NFfov+w/wupTtc55ww9zx61n4qFM29mcUY=";
 
   # patch in absolute nix store paths so the process doesn't need to cwd in $out

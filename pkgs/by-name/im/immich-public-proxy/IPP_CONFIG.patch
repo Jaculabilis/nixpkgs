@@ -1,0 +1,13 @@
+diff --git app/src/functions.ts app/src/functions.ts
+index 8e55c64..3ffeb1a 100644
+--- app/src/functions.ts
++++ app/src/functions.ts
+@@ -3,7 +3,7 @@ import { Response } from 'express-serve-static-core'
+ 
+ let config = {}
+ try {
+-  const configJson = require('../config.json')
++  const configJson = require(process.env.IPP_CONFIG || '../config.json')
+   if (typeof configJson === 'object') config = configJson
+ } catch (e) { }
+ 
